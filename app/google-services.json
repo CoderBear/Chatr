@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "200669961750",
+    "firebase_url": "https://chatr-c7b99.firebaseio.com",
+    "project_id": "chatr-c7b99",
+    "storage_bucket": "chatr-c7b99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200669961750:android:306ab08e0a3f2622",
+        "android_client_info": {
+          "package_name": "com.udemy.sbsapps.chatr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200669961750-ftmihseln71ls3et7pjrv1dgina9lo6q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.udemy.sbsapps.chatr",
+            "certificate_hash": "eef969e5a91b56a346758f3fac3e674fcbf8b8ec"
+          }
+        },
+        {
+          "client_id": "200669961750-9l0jr78rn2sf3h8mavdkhfej3frqde9o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuYr5usWTChVclK6AIuIAsxkuVuV4Cqx8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200669961750-9l0jr78rn2sf3h8mavdkhfej3frqde9o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
