@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Chatr</string>
+    <string name="sign_in">Sign-In</string>
+    <string name="e_mail_hint">E-mail</string>
+    <string name="password_hint">Password</string>
+    <string name="logo_content_decription">Logo</string>
+    <string name="log_in_TV">Log in</string>
 </resources>
