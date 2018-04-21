@@ -1,5 +1,6 @@
 package com.udemy.sbsapps.chatr;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,11 +16,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth = FirebaseAuth.getInstance();
     FirebaseUser currentUser;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference usersDB = database.getReference();
 
     EditText passwordET, emailET;
     TextView loginTV;
@@ -51,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 Log.i("createUserWithEmail: ", "succesful");
                                 currentUser = auth.getCurrentUser();
+                                usersDB.child("users").child(task.getResult().getUser().getUid()).child("email").setValue(emailET.getText().toString());
+                                Intent intent = new Intent(MainActivity.this, UserListActivity.class);
+                                startActivity(intent);
                             } else {
                                 Log.i("createUserWithEmail: ", "failed");
                                 Toast.makeText(MainActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
@@ -65,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 Log.i("signInWithEmail: ", "succesful");
                                 currentUser = auth.getCurrentUser();
+                                Intent intent = new Intent(MainActivity.this, UserListActivity.class);
+                                startActivity(intent);
                             } else {
                                 Log.i("signInWithEmail: ", "failed");
                                 Toast.makeText(MainActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
@@ -77,10 +87,12 @@ public class MainActivity extends AppCompatActivity {
     public void loginTextClicked(View view) {
         if(isLogin) {
             signupButton.setText("Sign Up");
-            loginTV.setText(R.string.log_in_TV);
+            loginTV.setText("Login");
+            isLogin = false;
         } else {
             signupButton.setText("Login");
             loginTV.setText("or, Sign Up");
+            isLogin = true;
         }
     }
 }
